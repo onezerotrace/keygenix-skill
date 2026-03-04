@@ -41,6 +41,10 @@ node client.js sign-tx <keyCode> <txHex> <chainId> <path>
 # Sign a message
 node client.js sign-msg <keyCode> <messageHex>
 
+# Import an existing mnemonic or private key into TEE (ECIES encrypted)
+node client.js import-key mnemonic "word1 word2 ... word12"
+node client.js import-key private <hexPrivKey>
+
 # Sign via specific address (no deriving)
 node client.js sign-tx-address <keyCode> <address> <txHex>
 node client.js sign-msg-address <keyCode> <address> <msgHex>

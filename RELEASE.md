@@ -83,10 +83,10 @@ AuthKey       ──── authorizes   ──► sign / export ops
 |------|---------|--------------|
 | `SKILL.md` | English skill instructions for AI agents | All users |
 | `SKILL.zh.md` | Chinese skill instructions for AI agents | Chinese users |
-| `client.js` | Node.js CLI for direct API calls | Developers / integration |
-| `secure_encryption.js` | ECIES encryption library | Developers / integration |
-| `.env.example` | Configuration template | All users |
-| `KEYS.md` | Key generation records | Per-deployment |
+| `cli/client.js` | Node.js CLI for direct API calls | Developers / integration |
+| `cli/secure_encryption.js` | ECIES encryption library | Developers / integration |
+| `cli/.env.example` | Configuration template | All users |
+| `cli/KEYS.md` | Key generation records | Per-deployment |
 
 ---
 
@@ -94,7 +94,7 @@ AuthKey       ──── authorizes   ──► sign / export ops
 
 - Node.js ≥ 18
 - Keygenix account (register at https://keygenix.pro)
-- npm packages: `@noble/curves`, `@noble/hashes`, `@noble/ciphers`, `json-stable-stringify`, `axios`
+- npm packages: `@noble/curves`, `@noble/hashes`, `json-stable-stringify`, `axios`
 
 ---
 
@@ -108,14 +108,14 @@ npm install github:onezerotrace/keygenix-mcp
 
 **Option B — CLI (scripting / no AI client):**
 ```bash
-cd cli
+cd keygenix-skill/cli
 npm install
 cp .env.example .env
 # Fill in: KEYGENIX_API_PRIV_KEY, KEYGENIX_AUTH_PRIV_KEY, KEYGENIX_ORG_CODE, KEYGENIX_WALLET_CODE
 
-node cli/client.js keygen      # → generate API Auth Key
-node cli/client.js keygen      # → generate AuthKey
-node cli/client.js list-keys   # → test connection
+node client.js keygen      # → generate API Auth Key
+node client.js keygen      # → generate AuthKey
+node client.js list-keys   # → test connection
 ```
 
 ---
@@ -141,7 +141,7 @@ The agent never holds a private key. The human registers the AuthKey and control
 ### v1.0.0 — 2026-03-04
 - Initial release
 - MCP Server: 9 tools (keygen, list_keys, get_key, create_key, import_key, list_addresses, create_address, sign_transaction, sign_message)
-- CLI: 9 commands for direct API access without MCP
+- CLI: 10 commands for direct API access without MCP
 - ECIES encryption for key import (plaintext never on wire)
 - English + Chinese skill documentation
 - 19 address types across 15+ blockchains
