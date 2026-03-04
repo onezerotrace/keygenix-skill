@@ -60,7 +60,7 @@ cp .env.example .env   # fill in your keys
 
 node client.js keygen                          # generate keypair
 node client.js list-keys                       # list keys
-node client.js create-key mnemonic <authPubKey>
+node client.js create-key mnemonic
 node client.js sign-tx <keyCode> <txHex> <chainId>
 node client.js sign-msg <keyCode> <messageHex>
 ```
