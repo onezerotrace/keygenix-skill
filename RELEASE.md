@@ -1,7 +1,6 @@
 # Keygenix Skill — Release v1.0.0
 
-**Release Date:** 2026-03-03  
-**Author:** Nova (AI CTO)  
+**Release Date:** 2026-03-04  
 **Category:** Blockchain / Key Management / Web3 Infrastructure  
 **Platforms:** OpenClaw, Claude, GPT, Gemini, and any MCP/ACP-compatible AI agent
 
@@ -102,22 +101,22 @@ AuthKey       ──── authorizes   ──► sign / export ops
 
 ## Quick Setup
 
+**Option A — MCP Server (recommended for AI agents):**
 ```bash
-# 1. Install dependencies
-npm install @noble/curves @noble/hashes @noble/ciphers json-stable-stringify axios
+npm install github:onezerotrace/keygenix-mcp
+# Configure in your AI client — see keygenix-mcp README
+```
 
-# 2. Generate keypairs
-node client.js keygen   # → API Auth Key
-node client.js keygen   # → AuthKey
-
-# 3. Register API Auth public key on keygenix.pro dashboard
-
-# 4. Configure environment
+**Option B — CLI (scripting / no AI client):**
+```bash
+cd cli
+npm install
 cp .env.example .env
 # Fill in: KEYGENIX_API_PRIV_KEY, KEYGENIX_AUTH_PRIV_KEY, KEYGENIX_ORG_CODE, KEYGENIX_WALLET_CODE
 
-# 5. Test connection
-node client.js list-keys
+node cli/client.js keygen      # → generate API Auth Key
+node cli/client.js keygen      # → generate AuthKey
+node cli/client.js list-keys   # → test connection
 ```
 
 ---
@@ -140,10 +139,10 @@ The agent never holds a private key. The human registers the AuthKey and control
 
 ## Changelog
 
-### v1.0.0 — 2026-03-03
+### v1.0.0 — 2026-03-04
 - Initial release
-- Full API coverage: keys, addresses, sign_transaction, sign_message, export
-- ECIES encryption library for import/export flows
-- Node.js CLI client with 9 commands
+- MCP Server: 9 tools (keygen, list_keys, get_key, create_key, import_key, list_addresses, create_address, sign_transaction, sign_message)
+- CLI: 9 commands for direct API access without MCP
+- ECIES encryption for key import (plaintext never on wire)
 - English + Chinese skill documentation
 - 19 address types across 15+ blockchains

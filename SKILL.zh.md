@@ -48,7 +48,7 @@ npm install github:onezerotrace/keygenix-mcp
 
 ## 不使用 MCP（CLI）
 
-如果没有 MCP 客户端，使用 MCP Server 仓库里的 CLI：
+如果没有 MCP 客户端，使用本仓库内附的 CLI：
 
 ```bash
 git clone https://github.com/onezerotrace/keygenix-skill

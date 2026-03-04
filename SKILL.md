@@ -48,7 +48,7 @@ Configure in Claude Desktop / Cursor / Windsurf:
 
 ## Without MCP (CLI)
 
-For scripting or debugging without an MCP client, use the CLI in the MCP server repo:
+For scripting or debugging without an MCP client, use the CLI included in this repo:
 
 ```bash
 git clone https://github.com/onezerotrace/keygenix-skill
