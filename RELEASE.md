@@ -36,8 +36,7 @@ Private keys never leave Keygenix's Trusted Execution Environment. The agent con
 ### Key Management
 - `CreateKey` — Generate mnemonic / private key / secret inside TEE
 - `ImportKey` — Encrypt key material locally → import into TEE (ECIES)
-- `ExportKey` — Export encrypted key from TEE → decrypt locally
-- `ListKeys` / `GetKey` / `UpdateKey` — Catalog operations
+- `ListKeys` / `GetKey` — Catalog operations
 
 ### Address Management
 - `CreateAddress` — Derive address from HD path (idempotent with `getOrCreate`)
